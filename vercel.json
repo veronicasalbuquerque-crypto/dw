@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-API-KEY, Authorization" }
+      ]
+    },
+    {
+      "source": "/.netlify/functions/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-API-KEY, Authorization" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/.netlify/functions/create-pix",
+      "destination": "/api/create-pix"
+    },
+    {
+      "source": "/.netlify/functions/check-status",
+      "destination": "/api/check-status"
+    },
+    {
+      "source": "/api/check-status/:id",
+      "destination": "/api/check-status?id=:id"
+    },
+    {
+      "source": "/flor",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/flor/:match*",
+      "destination": "/:match*"
+    }
+  ]
+}
