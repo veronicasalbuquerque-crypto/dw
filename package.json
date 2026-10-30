@@ -1,0 +1,18 @@
+{
+  "name": "cesta-de-cafe-xpay",
+  "version": "1.0.0",
+  "description": "Loja Bella Aurora Cestas de Café e Flores com Gateway de Pagamento XPay Brasil",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "xpay",
+    "pix",
+    "gateway",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "ISC"
+}
